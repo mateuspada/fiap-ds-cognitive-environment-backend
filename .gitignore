@@ -116,6 +116,11 @@ ipython_config.py
 .pdm.toml
 .pdm-python
 .pdm-build/
+test.py
+scripts_utils.py
+.vscode/
+
+.DS_Store
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
