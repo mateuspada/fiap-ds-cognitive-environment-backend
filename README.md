@@ -12,16 +12,18 @@ O projeto é dividido em três componentes:
 1. **📓 Análise Exploratória (Jupyter Notebook)**
    - Testes usando **OpenCV (`cv2`), DLib e AWS Rekognition** para extração de face.
    - Extração de texto utilizando **AWS Textract**.
+   - Comparação de Faces usando **AWS Rekognition**.
 
 2. **🔙 Backend (AWS Lambda)**
-   - Repositório: [`fiap-ds-cognitive-environment-backend`](#backend)
+   - Repositório: [`fiap-ds-cognitive-environment-backend`](https://github.com/mateuspada/fiap-ds-cognitive-environment-backend)
    - API Serverless em **AWS Lambda** usando **AWS Textract** e **AWS Rekognition**.
    - Inicialmente, a solução usava **DLib e OpenCV**. No entanto, essas bibliotecas exigem dependências do sistema operacional que não funcionam bem no AWS Lambda sem um container dedicado.
    - **Decisão:** Mudar para **AWS Rekognition**, que oferece reconhecimento facial e comparação de faces sem precisar de bibliotecas externas.
 
 3. **🖥️ Frontend (Streamlit)**
-   - Repositório: [`fiap-ds-cognitive-environment-frontend`](#frontend)
-   - Interface para o usuário fazer **upload das imagens** e visualizar os resultados.
+   - Repositório: [`fiap-ds-cognitive-environment-frontend`](https://github.com/mateuspada/fiap-ds-cognitive-environment-frontend)
+   - Interface web para o usuário fazer **upload das imagens** e visualizar os resultados.
+   - Converte arquivos PDF em imagem automaticamente utilizando **PyMuPDF (fitz)**.
 
 ---
 
@@ -59,7 +61,7 @@ Caso a validação seja bem-sucedida:
     "photo_validation": true,
     "photo_similarity": 98.75,
     "name_validation": true,
-    "address": "<address>>"
+    "address": "<address>"
   }
 }
 ```
